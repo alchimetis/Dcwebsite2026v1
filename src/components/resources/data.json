@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "category": "White paper",
+    "title": "AI and ESG Data Capture Report",
+    "button": "Download",
+    "image": "/src/assets/Resources/ResourcesOne.svg",
+    "downloadLink": "/src/pdf/1.pdf",
+    "showImage": true
+  },
+  {
+    "id": 2,
+    "category": "White paper",
+    "title": "Start Your ESG Journey with Confidence and Clarity.",
+    "button": "Download",
+    "image": "/src/assets/Resources/ResourcesTwo.svg",
+    "downloadLink": "/src/pdf/2.pdf",
+    "showImage": true
+  },
+  {
+    "id": 3,
+    "category": "White paper",
+    "title": "Robust Compliance and Enhanced Clarity",
+    "button": "Download",
+    "image": "/src/assets/Resources/ResourcesThree.svg",
+    "downloadLink": "/src/pdf/3.pdf",
+    "showImage": true
+  },
+  {
+    "id": 4,
+    "category": "White paper",
+    "title": "Smart Docs Templates",
+    "button": "Download",
+    "image": "/src/assets/Resources/ResourcesFour.svg",
+    "downloadLink": "/src/pdf/4.pdf",
+    "showImage": true
+  },
+  {
+    "id": 5,
+    "category": "White paper",
+    "title": "Advanced Compliance Resources",
+    "button": "Download",
+    "image": "/src/assets/Resources/ResourcesFive.svg",
+    "downloadLink": "/src/pdf/4.pdf",
+    "showImage": true
+  }
+]
