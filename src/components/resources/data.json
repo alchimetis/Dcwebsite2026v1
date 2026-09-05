@@ -5,7 +5,7 @@
     "title": "AI and ESG Data Capture Report",
     "button": "Download",
     "image": "/src/assets/Resources/ResourcesOne.svg",
-    "downloadLink": "/src/pdf/1.pdf",
+    "downloadLink": "/src/assets/pdf/1.pdf",
     "showImage": true
   },
   {
@@ -14,7 +14,7 @@
     "title": "Start Your ESG Journey with Confidence and Clarity.",
     "button": "Download",
     "image": "/src/assets/Resources/ResourcesTwo.svg",
-    "downloadLink": "/src/pdf/2.pdf",
+    "downloadLink": "/src/assets/pdf/2.pdf",
     "showImage": true
   },
   {
@@ -23,7 +23,7 @@
     "title": "Robust Compliance and Enhanced Clarity",
     "button": "Download",
     "image": "/src/assets/Resources/ResourcesThree.svg",
-    "downloadLink": "/src/pdf/3.pdf",
+    "downloadLink": "/src/assets/pdf/3.pdf",
     "showImage": true
   },
   {
@@ -32,7 +32,7 @@
     "title": "Smart Docs Templates",
     "button": "Download",
     "image": "/src/assets/Resources/ResourcesFour.svg",
-    "downloadLink": "/src/pdf/4.pdf",
+    "downloadLink": "/src/assets/pdf/4.pdf",
     "showImage": true
   },
   {
@@ -41,7 +41,7 @@
     "title": "Advanced Compliance Resources",
     "button": "Download",
     "image": "/src/assets/Resources/ResourcesFive.svg",
-    "downloadLink": "/src/pdf/4.pdf",
+    "downloadLink": "/src/assets/pdf/4.pdf",
     "showImage": true
   }
 ]
