@@ -6,7 +6,9 @@ import videoThumbnail from "@/assets/vimeo-player.svg";
 export default function ComplianceVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
 
-  const video = "https://vimeo.com/1075714602/9701fd6a4c";
+  const videoId = "874904053";
+
+  const videoUrl = `https://player.vimeo.com/video/${videoId}`;
 
   return (
     <section className="w-full overflow-hidden bg-white dark:bg-[#0d0d0d]">
@@ -29,6 +31,7 @@ export default function ComplianceVideo() {
           lg:py-24
         "
       >
+        {/* Content */}
         <motion.div
           initial={{
             opacity: 0,
@@ -84,6 +87,7 @@ export default function ComplianceVideo() {
           </p>
         </motion.div>
 
+        {/* Video */}
         <motion.div
           initial={{
             opacity: 0,
@@ -113,7 +117,13 @@ export default function ComplianceVideo() {
                 whileTap={{
                   scale: 0.985,
                 }}
-                className="absolute inset-0 h-full w-full cursor-pointer"
+                className="
+                  absolute
+                  inset-0
+                  h-full
+                  w-full
+                  cursor-pointer
+                "
                 aria-label="Play compliance video"
               >
                 <img
@@ -124,6 +134,7 @@ export default function ComplianceVideo() {
 
                 <div className="absolute inset-0 bg-black/5" />
 
+                {/* Play Button */}
                 <motion.div
                   initial={{
                     opacity: 0,
@@ -186,11 +197,26 @@ export default function ComplianceVideo() {
                   duration: 0.6,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                src={`${video}?autoplay=1&title=0&byline=0&portrait=0`}
-                title="Compliance Reinvented"
-                allow="autoplay; fullscreen; picture-in-picture"
+                src={`${videoUrl}?badge=0&autopause=0&autoplay=1&player_id=0&app_id=58479&title=0&byline=0&portrait=0`}
+                title="DC Intro"
+                frameBorder="0"
+                allow="
+                  autoplay;
+                  fullscreen;
+                  picture-in-picture;
+                  clipboard-write;
+                  encrypted-media;
+                  web-share
+                "
+                referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
-                className="absolute inset-0 h-full w-full border-0"
+                className="
+                  absolute
+                  inset-0
+                  h-full
+                  w-full
+                  border-0
+                "
               />
             )}
           </div>
