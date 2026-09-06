@@ -1,4 +1,4 @@
-# Daily Compliance,
+# Daily Compliance
 
 A responsive compliance and sustainability website built with React, TypeScript, Vite, and Tailwind CSS.
 
