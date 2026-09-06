@@ -4,7 +4,6 @@ import Footer from "@/components/layout/Footer";
 import whatsapp from "@/assets/whatsapp.svg";
 import { Toaster } from "sonner";
 
-
 export default function App() {
   const whatsappUrl = import.meta.env.VITE_WHATSAPP_URL;
 
@@ -25,17 +24,15 @@ export default function App() {
 
       <Footer />
 
-        <Toaster
-        position="top-right"
-        richColors
-      />
+      <Toaster position="top-right" richColors />
       <button
         type="button"
         onClick={handleWhatsAppClick}
         aria-label="Chat with us on WhatsApp"
         className="
           fixed
-          bottom-22
+       bottom-14 
+       sm:bottom-22
           right-5
           z-9999
           flex

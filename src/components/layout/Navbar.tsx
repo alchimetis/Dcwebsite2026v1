@@ -128,7 +128,7 @@ export default function Navbar() {
                       duration-200
                       ${
                         isActive
-                          ? "text-[#ed2935]"
+                          ? ""
                           : isDark
                             ? "text-white"
                             : "text-[#171717]"
@@ -384,7 +384,7 @@ export default function Navbar() {
                           font-normal
                           ${
                             isActive
-                              ? "text-[#ed2935]"
+                              ? ""
                               : isDark
                                 ? "text-white"
                                 : "text-[#171717]"

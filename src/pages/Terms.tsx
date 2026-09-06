@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { ArrowLeft, FileText } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -146,39 +145,38 @@ const sections = [
 ];
 
 export default function Terms() {
-      const { theme } = useTheme();
+  const { theme } = useTheme();
   const isDark = theme === "dark";
   return (
     <main className="min-h-screen bg-white text-[#171717] dark:bg-[#0D0D0D] dark:text-white">
- 
- <section className="relative overflow-hidden bg-[#071044] px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 md:px-10 lg:px-12 lg:pb-24 lg:pt-24">
-  <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#FA4028]/20 blur-3xl" />
-  <div className="absolute -bottom-40 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+      <section className="relative overflow-hidden bg-[#071044] px-5 pb-16 pt-16 sm:px-8 sm:pb-20 sm:pt-20 md:px-10 lg:px-12 lg:pb-24 lg:pt-24">
+        <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-[#FA4028]/20 blur-3xl" />
+        <div className="absolute -bottom-40 -left-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
 
-  <div className="relative mx-auto max-w-[1200px]">
-    <motion.div
-      initial={{ opacity: 0, y: 25 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.7,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-    >
-      <Link
-        to={ROUTES.HOME}
-        className="mb-8 inline-flex items-center gap-2 font-poppins text-sm font-medium text-white/80 transition-colors hover:text-white"
-      >
-        <ArrowLeft size={17} strokeWidth={1.8} />
-        Back to Home
-      </Link>
+        <div className="relative mx-auto max-w-[1200px]">
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            <Link
+              to={ROUTES.HOME}
+              className="mb-8 inline-flex items-center gap-2 font-poppins text-sm font-medium text-white/80 transition-colors hover:text-white"
+            >
+              <ArrowLeft size={17} strokeWidth={1.8} />
+              Back to Home
+            </Link>
 
-      <div className="flex items-start gap-4">
-        <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white">
-          <FileText size={27} strokeWidth={1.6} />
-        </div>
+            <div className="flex items-start gap-4">
+              <div className="mt-1 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-white/10 text-white">
+                <FileText size={27} strokeWidth={1.6} />
+              </div>
 
-        <div>
-            <h1
+              <div>
+                <h1
                   className={`
   max-w-[1000px]
   font-playfair
@@ -188,7 +186,8 @@ export default function Terms() {
   tracking-[-0.03em]
   sm:text-5xl
   md:text-6xl
-  -mt-3
+  mt-1 
+  sm:-mt-3
   lg:text-[64px]
   xl:text-[72px]
   ${isDark ? "text-white" : "text-[#fff]"}
@@ -200,20 +199,20 @@ export default function Terms() {
                   </span>
                 </h1>
 
-          <p className="mt-5 max-w-[760px] font-poppins text-base leading-7 text-white/75 sm:text-lg">
-            Please review the terms and conditions that govern
-            your use of Daily Compliance's website, resources,
-            platforms, and services.
-          </p>
+                <p className="mt-5 max-w-[760px] font-poppins text-base leading-7 text-white/75 sm:text-lg">
+                  Please review the terms and conditions that govern your use of
+                  Daily Compliance's website, resources, platforms, and
+                  services.
+                </p>
 
-          <p className="mt-5 font-poppins text-sm text-white/55">
-            Last Updated: September 4, 2026
-          </p>
+                <p className="mt-5 font-poppins text-sm text-white/55">
+                  Last Updated: September 4, 2026
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </motion.div>
-  </div>
-</section>
+      </section>
       <section className="px-5 py-12 sm:px-8 sm:py-16 md:px-10 lg:px-12 lg:py-20">
         <div className="mx-auto max-w-[1200px]">
           <motion.div
@@ -240,9 +239,9 @@ export default function Terms() {
             </h2>
 
             <p className="mt-3 font-poppins text-[15px] leading-7 text-[#555] dark:text-gray-400">
-              These Terms and Conditions explain the rules and
-              responsibilities that apply when you access or use
-              Daily Compliance's website, resources, and services.
+              These Terms and Conditions explain the rules and responsibilities
+              that apply when you access or use Daily Compliance's website,
+              resources, and services.
             </p>
           </motion.div>
 
@@ -325,9 +324,8 @@ export default function Terms() {
 
               <div className="mt-16 border-t border-[#E5E5E5] pt-8 dark:border-white/10">
                 <p className="font-poppins text-sm leading-6 text-[#777] dark:text-gray-500">
-                  If you have questions about these Terms and
-                  Conditions or our services, please contact Daily
-                  Compliance through our website.
+                  If you have questions about these Terms and Conditions or our
+                  services, please contact Daily Compliance through our website.
                 </p>
 
                 <Link

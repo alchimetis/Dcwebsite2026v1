@@ -10,6 +10,7 @@ import { downloadPdf } from "@/service/services";
 interface Resource {
   id: number;
   category: string;
+  subCategory: string;
   title: string;
   button: string;
   image: string;
@@ -21,11 +22,11 @@ interface DownloadForm {
   name: string;
   email: string;
 }
-
 export default function Resources() {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [downloadResource, setDownloadResource] =
-    useState<Resource | null>(null);
+  const [downloadResource, setDownloadResource] = useState<Resource | null>(
+    null,
+  );
 
   const [form, setForm] = useState<DownloadForm>({
     name: "",
@@ -34,22 +35,21 @@ export default function Resources() {
 
   const [isDownloading, setIsDownloading] = useState(false);
 
-  const filteredResources = useMemo(() => {
-    return (data as Resource[]).filter((item) => {
-      const categoryMatch =
-        activeCategory === "all" ||
-        (activeCategory === "esg" &&
-          item.title.toLowerCase().includes("esg")) ||
-        (activeCategory === "white paper" &&
-          item.category === "White paper") ||
-        (activeCategory === "newsletters" &&
-          item.category === "Newsletters");
+const filteredResources = useMemo(() => {
+  const resources = data as Resource[];
 
-   
+  if (activeCategory === "all") {
+    return resources;
+  }
 
-      return categoryMatch;
-    });
-  }, [activeCategory]);
+  const selectedCategory = activeCategory.trim().toLowerCase();
+
+  return resources.filter((item) => {
+    const subCategory = item.subCategory?.trim().toLowerCase();
+
+    return subCategory === selectedCategory;
+  });
+}, [activeCategory]);
 
   const openDownloadModal = (item: Resource) => {
     if (!item.downloadLink) {
@@ -76,9 +76,7 @@ export default function Resources() {
     });
   };
 
-  const handleDownload = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ) => {
+  const handleDownload = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!downloadResource) return;
@@ -133,9 +131,7 @@ export default function Resources() {
     } catch (error) {
       console.error(error);
 
-      toast.error(
-        "Unable to process your download. Please try again.",
-      );
+      toast.error("Unable to process your download. Please try again.");
     } finally {
       setIsDownloading(false);
     }
@@ -219,12 +215,7 @@ export default function Resources() {
                       }}
                       transition={{
                         duration: 0.6,
-                        ease: [
-                          0.22,
-                          1,
-                          0.36,
-                          1,
-                        ],
+                        ease: [0.22, 1, 0.36, 1],
                       }}
                       className="h-full w-full object-cover"
                     />
@@ -270,23 +261,45 @@ export default function Resources() {
                     lg:p-7
                   "
                 >
-                  <span
-                    className="
-                      w-fit
-                      rounded-md
-                      bg-[#EFF8FF]
-                      px-3
-                      py-1.5
-                      font-poppins
-                      text-xs
-                      font-normal
-                      text-[#2787F5]
-                      dark:bg-[#162638]
-                      dark:text-[#72B5FF]
-                    "
-                  >
-                    {item.category}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span
+                      className="
+      w-fit
+      rounded-md
+      bg-[#EBF7FF]
+      px-3
+      py-1.5
+      font-poppins
+      text-xs
+      font-normal
+      text-[#2787F5]
+      dark:bg-[#EBF7FF]
+      dark:text-[#2787F5]
+    "
+                    >
+                      {item.category}
+                    </span>
+
+                    {item.subCategory === "ESG" && (
+                      <span
+                        className="
+        w-fit
+        rounded-md
+        bg-[#DEF2E5]
+        px-3
+        py-1.5
+        font-poppins
+        text-xs
+        font-normal
+        text-[#329352]
+        dark:bg-[#DEF2E5]
+        dark:text-[#329352]
+      "
+                      >
+                        {item.subCategory}
+                      </span>
+                    )}
+                  </div>
 
                   <h3
                     className="
@@ -338,10 +351,7 @@ export default function Resources() {
                         dark:hover:bg-[#FA4028]
                       "
                     >
-                      <Download
-                        size={17}
-                        strokeWidth={1.7}
-                      />
+                      <Download size={17} strokeWidth={1.7} />
                       Download
                     </motion.button>
                   </div>
@@ -429,9 +439,7 @@ export default function Resources() {
               shadow-2xl
               sm:p-9
             "
-            onClick={(event) =>
-              event.stopPropagation()
-            }
+            onClick={(event) => event.stopPropagation()}
           >
             <button
               type="button"
@@ -470,10 +478,7 @@ export default function Resources() {
                 text-[#68b5ff]
               "
             >
-              <Download
-                size={25}
-                strokeWidth={1.7}
-              />
+              <Download size={25} strokeWidth={1.7} />
             </div>
 
             <h2
@@ -513,10 +518,7 @@ export default function Resources() {
               {downloadResource.title}
             </p>
 
-            <form
-              onSubmit={handleDownload}
-              className="mt-7 space-y-5"
-            >
+            <form onSubmit={handleDownload} className="mt-7 space-y-5">
               <div>
                 <label
                   htmlFor="download-name"
@@ -672,16 +674,10 @@ export default function Resources() {
               >
                 <Download
                   size={18}
-                  className={
-                    isDownloading
-                      ? "animate-bounce"
-                      : ""
-                  }
+                  className={isDownloading ? "animate-bounce" : ""}
                 />
 
-                {isDownloading
-                  ? "Processing..."
-                  : "Download PDF"}
+                {isDownloading ? "Processing..." : "Download PDF"}
               </motion.button>
             </form>
           </motion.div>

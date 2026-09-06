@@ -10,7 +10,7 @@ import {
   Leaf,
 } from "lucide-react";
 import { ROUTES } from "@/router/routes";
-import aboutGirl from "@/assets/aboutgirls.svg";
+import aboutGirl from "@/assets/aboutgirls.png";
 import { useTheme } from "@/theme/ThemeProvider";
 import { Link } from "react-router-dom";
 

@@ -160,7 +160,8 @@ export default function Privacy() {
   tracking-[-0.03em]
   sm:text-5xl
   md:text-6xl
-  -mt-3
+  mt-1 
+  sm:-mt-3
   lg:text-[64px]
   xl:text-[72px]
   ${isDark ? "text-white" : "text-[#fff]"}

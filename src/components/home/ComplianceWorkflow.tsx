@@ -3,12 +3,12 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronRight } from "lucide-react";
 
 import star from "@/assets/star.svg";
-import workflowOne from "@/assets/workflow/workflowOne.svg";
-import workflowTwo from "@/assets/workflow/workflowTwo.svg";
-import workflowThree from "@/assets/workflow/workflowThree.svg";
-import workflowFour from "@/assets/workflow/workflowFour.svg";
-import workflowFive from "@/assets/workflow/workflowFive.svg";
-import workflowSix from "@/assets/workflow/workflowSix.svg";
+import workflowOne from "@/assets/workflow/workflowOne.png";
+import workflowTwo from "@/assets/workflow/workflowTwo.png";
+import workflowThree from "@/assets/workflow/workflowThree.png";
+import workflowFour from "@/assets/workflow/workflowFour.png";
+import workflowFive from "@/assets/workflow/workflowFive.png";
+import workflowSix from "@/assets/workflow/workflowSix.png";
 
 const workflowItems = [
   {

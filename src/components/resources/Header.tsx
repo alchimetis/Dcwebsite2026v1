@@ -10,15 +10,15 @@ const categories = [
   },
   {
     label: "ESG",
-    value: "esg",
+    value: "ESG",
   },
   {
     label: "Whitepapers",
-    value: "white paper",
+    value: "Whitepapers",
   },
   {
     label: "Newsletters",
-    value: "newsletters",
+    value: "Newsletters",
   },
 ];
 
@@ -61,15 +61,11 @@ export default function Header({
         >
           <span className="shrink-0">Daily Compliance</span>
 
-          <span className="text-[#999] dark:text-gray-600">
-            ›
-          </span>
+          <span className="text-[#999] dark:text-gray-600">›</span>
 
           <span className="shrink-0">Resources</span>
 
-          <span className="text-[#999] dark:text-gray-600">
-            ›
-          </span>
+          <span className="text-[#999] dark:text-gray-600">›</span>
 
           <span className="shrink-0 text-[#222] dark:text-gray-200">
             Ebooks
@@ -130,19 +126,14 @@ export default function Header({
             "
           >
             {categories.map((category) => {
-              const isActive =
-                activeCategory === category.value;
+              const isActive = activeCategory === category.value;
 
               return (
                 <button
                   key={category.value}
                   type="button"
-                  onClick={() =>
-                    onCategoryChange(category.value)
-                  }
-                  aria-current={
-                    isActive ? "page" : undefined
-                  }
+                  onClick={() => onCategoryChange(category.value)}
+                  aria-current={isActive ? "page" : undefined}
                   className={`
                     flex
                     min-h-[46px]

@@ -5,7 +5,7 @@ import type { FormEvent } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 
-import img from "@/assets/contactus.svg";
+import img from "@/assets/contactus.png";
 import { ROUTES } from "@/router/routes";
 import { contactUs } from "@/service/services";
 

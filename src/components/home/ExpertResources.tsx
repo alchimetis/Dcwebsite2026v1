@@ -14,11 +14,11 @@ import {
   User,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import ResourcesOne from "@/assets/Resources/ResourcesOne.svg";
-import ResourcesTwo from "@/assets/Resources/ResourcesTwo.svg";
-import ResourcesThree from "@/assets/Resources/ResourcesThree.svg";
-import ResourcesFour from "@/assets/Resources/ResourcesFour.svg";
-import ResourcesFive from "@/assets/Resources/ResourcesFive.svg";
+import ResourcesOne from "@/assets/Resources/ResourcesOne.png";
+import ResourcesTwo from "@/assets/Resources/ResourcesTwo.png";
+import ResourcesThree from "@/assets/Resources/ResourcesThree.png";
+import ResourcesFour from "@/assets/Resources/ResourcesFour.png";
+import ResourcesFive from "@/assets/Resources/ResourcesFive.png";
 import resourceData from "@/components/resources/data.json";
 import { ROUTES } from "@/router/routes";
 import { downloadPdf } from "@/service/services";
@@ -35,11 +35,11 @@ type ResourceItem = {
 };
 
 const resourceImages: Record<string, string> = {
-  "/src/assets/Resources/ResourcesOne.svg": ResourcesOne,
-  "/src/assets/Resources/ResourcesTwo.svg": ResourcesTwo,
-  "/src/assets/Resources/ResourcesThree.svg": ResourcesThree,
-  "/src/assets/Resources/ResourcesFour.svg": ResourcesFour,
-  "/src/assets/Resources/ResourcesFive.svg": ResourcesFive,
+  "@/assets/Resources/ResourcesOne.png": ResourcesOne,
+  "@/assets/Resources/ResourcesTwo.png": ResourcesTwo,
+  "@/assets/Resources/ResourcesThree.png": ResourcesThree,
+  "@/assets/Resources/ResourcesFour.png": ResourcesFour,
+  "@/assets/Resources/ResourcesFive.png": ResourcesFive,
 };
 
 const resources: ResourceItem[] = resourceData.map((resource) => ({

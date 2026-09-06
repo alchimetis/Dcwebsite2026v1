@@ -1,10 +1,10 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-import heroSectionOne from "@/assets/hero/heroSectionOne.svg";
-import heroSectionTwo from "@/assets/hero/heroSectionTwo.svg";
-import heroSectionThree from "@/assets/hero/heroSectionThree.svg";
-import heroSectionFour from "@/assets/hero/heroSectionFour.svg";
+import heroSectionOne from "@/assets/hero/heroSectionOne.png";
+import heroSectionTwo from "@/assets/hero/heroSectionTwo.png";
+import heroSectionThree from "@/assets/hero/heroSectionThree.png";
+import heroSectionFour from "@/assets/hero/heroSectionFour.png";
 import { useTheme } from "@/theme/ThemeProvider";
 import { ROUTES } from "@/router/routes";
 import { useNavigate } from "react-router-dom";

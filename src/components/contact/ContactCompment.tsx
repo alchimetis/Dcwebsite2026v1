@@ -10,7 +10,7 @@ import type { FormEvent } from "react";
 import { contactUs } from "@/service/services";
 import { ROUTES } from "@/router/routes";
 import { toast } from "sonner";
-import img from "@/assets/contactus.svg";
+import img from "@/assets/contactus.png";
 
 export default function ContactCompment() {
   const [loading, setLoading] = useState(false);
