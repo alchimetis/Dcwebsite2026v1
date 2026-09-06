@@ -1,28 +1,75 @@
 import { motion } from "framer-motion";
-import {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
-import {
-  ArrowLeft,
-  ArrowRight,
-  X,
-  Download,
-  Mail,
-  User,
-} from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight, X, Download, Mail, User } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import ResourcesOne from "@/assets/Resources/ResourcesOne.png";
 import ResourcesTwo from "@/assets/Resources/ResourcesTwo.png";
 import ResourcesThree from "@/assets/Resources/ResourcesThree.png";
 import ResourcesFour from "@/assets/Resources/ResourcesFour.png";
 import ResourcesFive from "@/assets/Resources/ResourcesFive.png";
-import resourceData from "@/components/resources/data.json";
+
+import PdfOne from "@/assets/pdf/1.pdf";
+import PdfTwo from "@/assets/pdf/2.pdf";
+import PdfThree from "@/assets/pdf/3.pdf";
+import PdfFour from "@/assets/pdf/4.pdf";
+import PdfFive from "@/assets/pdf/5.pdf";
+
 import { ROUTES } from "@/router/routes";
 import { downloadPdf } from "@/service/services";
 import { toast } from "sonner";
+
+const resourceData = [
+  {
+    id: 1,
+    category: "White paper",
+    subCategory: "ESG",
+    title: "AI and ESG Data Capture Report",
+    button: "Download",
+    image: ResourcesOne,
+    downloadLink: PdfOne,
+    showImage: true,
+  },
+  {
+    id: 2,
+    category: "White paper",
+    subCategory: "ESG",
+    title: "Start Your ESG Journey with Confidence and Clarity.",
+    button: "Download",
+    image: ResourcesTwo,
+    downloadLink: PdfTwo,
+    showImage: true,
+  },
+  {
+    id: 3,
+    category: "White paper",
+    subCategory: "ESG",
+    title: "Robust Compliance and Enhanced Clarity",
+    button: "Download",
+    image: ResourcesThree,
+    downloadLink: PdfThree,
+    showImage: true,
+  },
+  {
+    id: 4,
+    category: "White paper",
+    subCategory: "Whitepapers",
+    title: "Smart Docs Templates",
+    button: "Download",
+    image: ResourcesFour,
+    downloadLink: PdfFour,
+    showImage: true,
+  },
+  {
+    id: 5,
+    category: "White paper",
+    subCategory: "Whitepapers",
+    title: "Advanced Compliance Resources",
+    button: "Download",
+    image: ResourcesFive,
+    downloadLink: PdfFive,
+    showImage: true,
+  },
+];
 
 type ResourceItem = {
   id: number;
@@ -63,8 +110,9 @@ export default function ExpertResources() {
   const [currentIndex, setCurrentIndex] = useState(COPY_LENGTH * 2);
   const [cardWidth, setCardWidth] = useState(0);
   const [isResetting, setIsResetting] = useState(false);
-  const [downloadResource, setDownloadResource] =
-    useState<ResourceItem | null>(null);
+  const [downloadResource, setDownloadResource] = useState<ResourceItem | null>(
+    null,
+  );
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isDownloading, setIsDownloading] = useState(false);
@@ -159,9 +207,7 @@ export default function ExpertResources() {
     setEmail("");
   };
 
-  const handleDownload = async (
-    event: React.FormEvent<HTMLFormElement>,
-  ) => {
+  const handleDownload = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (!downloadResource) {
@@ -442,10 +488,7 @@ export default function ExpertResources() {
               </p>
             </div>
 
-            <form
-              onSubmit={handleDownload}
-              className="mt-7 space-y-5"
-            >
+            <form onSubmit={handleDownload} className="mt-7 space-y-5">
               <div>
                 <label
                   htmlFor="resource-name"
@@ -464,9 +507,7 @@ export default function ExpertResources() {
                     id="resource-name"
                     type="text"
                     value={name}
-                    onChange={(event) =>
-                      setName(event.target.value)
-                    }
+                    onChange={(event) => setName(event.target.value)}
                     placeholder="Enter your name"
                     autoComplete="name"
                     required
@@ -494,9 +535,7 @@ export default function ExpertResources() {
                     id="resource-email"
                     type="email"
                     value={email}
-                    onChange={(event) =>
-                      setEmail(event.target.value)
-                    }
+                    onChange={(event) => setEmail(event.target.value)}
                     placeholder="Enter your email"
                     autoComplete="email"
                     required
@@ -508,11 +547,7 @@ export default function ExpertResources() {
 
               <motion.button
                 type="submit"
-                disabled={
-                  isDownloading ||
-                  !name.trim() ||
-                  !email.trim()
-                }
+                disabled={isDownloading || !name.trim() || !email.trim()}
                 whileTap={{ scale: 0.97 }}
                 className="flex w-full items-center justify-center gap-2 rounded-md bg-[#2E2E2E] px-6 py-3.5 font-poppins text-sm font-medium text-white transition-all duration-300 hover:bg-[#071044] disabled:cursor-not-allowed disabled:opacity-50 dark:bg-[#FA4028] dark:hover:bg-[#e63822]"
               >

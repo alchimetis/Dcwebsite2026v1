@@ -4,8 +4,73 @@ import { Download, Mail, User, X } from "lucide-react";
 import { toast } from "sonner";
 
 import Header from "@/components/resources/Header";
-import data from "@/components/resources/data.json";
 import { downloadPdf } from "@/service/services";
+import ResourcesOne from "@/assets/Resources/ResourcesOne.png";
+import ResourcesTwo from "@/assets/Resources/ResourcesTwo.png";
+import ResourcesThree from "@/assets/Resources/ResourcesThree.png";
+import ResourcesFour from "@/assets/Resources/ResourcesFour.png";
+import ResourcesFive from "@/assets/Resources/ResourcesFive.png";
+
+import PdfOne from "@/assets/pdf/1.pdf";
+import PdfTwo from "@/assets/pdf/2.pdf";
+import PdfThree from "@/assets/pdf/3.pdf";
+import PdfFour from "@/assets/pdf/4.pdf";
+import PdfFive from "@/assets/pdf/5.pdf";
+
+
+
+const data = [
+  {
+    id: 1,
+    category: "White paper",
+    subCategory: "ESG",
+    title: "AI and ESG Data Capture Report",
+    button: "Download",
+    image: ResourcesOne,
+    downloadLink: PdfOne,
+    showImage: true,
+  },
+  {
+    id: 2,
+    category: "White paper",
+    subCategory: "ESG",
+    title: "Start Your ESG Journey with Confidence and Clarity.",
+    button: "Download",
+    image: ResourcesTwo,
+    downloadLink: PdfTwo,
+    showImage: true,
+  },
+  {
+    id: 3,
+    category: "White paper",
+    subCategory: "ESG",
+    title: "Robust Compliance and Enhanced Clarity",
+    button: "Download",
+    image: ResourcesThree,
+    downloadLink: PdfThree,
+    showImage: true,
+  },
+  {
+    id: 4,
+    category: "White paper",
+    subCategory: "Whitepapers",
+    title: "Smart Docs Templates",
+    button: "Download",
+    image: ResourcesFour,
+    downloadLink: PdfFour,
+    showImage: true,
+  },
+  {
+    id: 5,
+    category: "White paper",
+    subCategory: "Whitepapers",
+    title: "Advanced Compliance Resources",
+    button: "Download",
+    image: ResourcesFive,
+    downloadLink: PdfFive,
+    showImage: true,
+  },
+];
 
 interface Resource {
   id: number;
